@@ -12,8 +12,18 @@ PokemonApp.Pokemon.prototype.render= function () {
       console.log(response);
       $('.js-pkmn-name').text(response.name);
       $('.js-pkmn-number').text(response.pkdx_id);
-      $('.js-pkmn-height').text(response.height);
+      $('.js-pkmn- height').text(response.height);
       $('.js-pkmn-weight').text(response.weight);
+      $('.js-pkmn-hp').text(response.hp);
+      $('.js-pkmn-attack').text(response.attack);
+      $('.js-pkmn-defense').text(response.defense);
+      $('.js-pkmn-sp-attack').text(response.sp_atk);
+      $('.js-pkmn-sp-defense').text(response.sp_def);
+      $('.js-pkmn-speed').text(response.speed);
+      var types= response.types;
+      for (var i = 0; i<types.length; i++){
+          $('.js-pkmn-types').text(types[i].name);
+      };
       $('.js-pokemon-modal').modal("show");
     }
   });
