@@ -25,6 +25,10 @@ $(document).on("ready",function(){
     success: function(response){
       console.log("Pokemon info:");
       console.log(response);
+      $('.js-pkmn-name').text(response.name);
+      $('.js-pkmn-number').text(response.pkdx_id);
+      $('.js-pkmn-height').text(response.height);
+      $('.js-pkmn-weight').text(response.weight);
       $('.js-pokemon-modal').modal("show");
     }
   });
