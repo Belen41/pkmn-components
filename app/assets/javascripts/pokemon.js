@@ -5,7 +5,20 @@ PokemonApp.Pokemon = function(pokemonUri){
 };
 PokemonApp.Pokemon.prototype.render= function () {
   console.log("Rendering pokemon: #" + this.id);
+  $.ajax({
+    url: "/api/pokemon/" + this.id,
+    success: function(response){
+      console.log("Pokemon info:");
+      console.log(response);
+      $('.js-pkmn-name').text(response.name);
+      $('.js-pkmn-number').text(response.pkdx_id);
+      $('.js-pkmn-height').text(response.height);
+      $('.js-pkmn-weight').text(response.weight);
+      $('.js-pokemon-modal').modal("show");
+    }
+  });
 };
+
 PokemonApp.idFromUri = function(pokemonUri){
   var uriSegments = pokemonUri.split("/");
   var secondLast = uriSegments.length - 2;
@@ -19,17 +32,5 @@ $(document).on("ready",function(){
 
     var pokemon = new PokemonApp.Pokemon(pokemonUri);
     pokemon.render();
-  });
-  $.ajax({
-    url: "/api/pokemon/" + this.id,
-    success: function(response){
-      console.log("Pokemon info:");
-      console.log(response);
-      $('.js-pkmn-name').text(response.name);
-      $('.js-pkmn-number').text(response.pkdx_id);
-      $('.js-pkmn-height').text(response.height);
-      $('.js-pkmn-weight').text(response.weight);
-      $('.js-pokemon-modal').modal("show");
-    }
   });
 });
