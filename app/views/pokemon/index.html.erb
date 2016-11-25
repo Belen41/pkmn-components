@@ -27,6 +27,8 @@
           <span class='js-pkmn-name'>Feraligtr</span>
           <small class='js-pkmn-number'>#160</small>
         </h3>
+        <button class='btn btn-info js-show-evolutions' data-evolution-uri="/api/v1/pokemon/">Show Evolutions</button>
+        <img src="" class='img-circle js-show-image' alt="Pokemon Image" >
       </div><!-- .modal-header -->
 
       <div class="modal-body">
@@ -51,8 +53,55 @@
           <dt>Speed</dt>
           <dd class='js-pkmn-speed'></dd>
 
+          <dt>Exp</dt>
+          <dd class='js-pkmn-exp'></dd>
+
           <dt>Types</dt>
           <dd class='js-pkmn-types'></dd>
+
+        </dl>
+      </div><!-- .modal-body -->
+
+    </div><!-- .modal-content -->
+  </div><!-- .modal-dialog -->
+</div><!-- .modal -->
+<!-- Pokemon Evolutions modal view (hidden at first) -->
+<div class="modal fade js-evolutions-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+
+        <h3 class="modal-title">
+          <span class='js-pkmn-evol-name'></span>
+          <small class='js-pkmn-evol-number'></small>
+        </h3>
+        <img src="" class='img-circle js-show-evol-image' alt="Pokemon Evol Image" >
+      </div><!-- .modal-header -->
+
+      <div class="modal-body">
+        <dl class="dl-horizontal">
+          <dt>Height</dt>
+          <dd class='js-pkmn-evol-height'>23</dd>
+
+          <dt>Weight</dt>
+          <dd class='js-pkmn-evol-weight'>888</dd>
+
+          <dt>Hit Points</dt>
+          <dd class='js-pkmn-evol-hp'></dd>
+
+          <dt>Attack and Defense</dt>
+          <dd class='js-pkmn-evol-attack'></dd>
+          <dd class='js-pkmn-evol-defense'></dd>
+
+          <dt>Speed</dt>
+          <dd class='js-pkmn-evol-speed'></dd>
+
+          <dt>Exp</dt>
+          <dd class='js-pkmn-evol-exp'></dd>
 
         </dl>
       </div><!-- .modal-body -->
